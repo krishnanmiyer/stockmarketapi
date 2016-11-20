@@ -85,13 +85,13 @@ router.route('/user/add')
             var data = req.body;
 
             var request = new sql.Request();
-            request.input('userName', sql.NVarChar, data.UserName);
-            request.input('emailAddress', sql.NVarChar, data.EmailAddress);
-            request.input('password', sql.NVarChar, data.Password);
-            request.input('gender', sql.Bit, data.Gender);
+            request.input('userName', sql.NVarChar, data.userName);
+            request.input('emailAddress', sql.NVarChar, data.emailAddress);
+            request.input('password', sql.NVarChar, data.password);
+            request.input('gender', sql.Bit, data.gender);
             request.execute('uspInsertUser').then(function (recordset) {
                 if (recordset.returnValue == 0) {
-                    res.status(200).json(data.EmailAddress);
+                    res.status(200).json(data.emailAddress);
                 }
                 else {
                     res.status(200).json('');
