@@ -85,8 +85,7 @@ router.route('/user/add')
             var data = req.body;
 
             var request = new sql.Request();
-            request.input('firstName', sql.NVarChar, data.FirstName);
-            request.input('lastName', sql.NVarChar, data.LastName);
+            request.input('userName', sql.NVarChar, data.UserName);
             request.input('emailAddress', sql.NVarChar, data.EmailAddress);
             request.input('password', sql.NVarChar, data.Password);
             request.input('gender', sql.Bit, data.Gender);
